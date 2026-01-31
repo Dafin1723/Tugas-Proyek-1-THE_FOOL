@@ -116,4 +116,4 @@ Every expert was once a beginner.
 
 ###
 
-![Demo Animasi](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
+![Demo Animasi](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnMyMXJhMjBjbnFiNjhhMDBjemFrN3k0bW1oZXN0YmwxbmZtZzZoYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JCIWBz8oRRLZmZhNn/giphy.gif)
