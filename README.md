@@ -109,7 +109,7 @@ Every expert was once a beginner.
 
 | Member | Commits | Last Commit |
 |--------|--------|------------|
-| Dafin  | 8     | 30 Jan 2026 |
+| Dafin  | 16     | 30 Jan 2026 |
 | Fikri  | 0      | 31 Jan 2026 |
 | Amru   | 0      | 30 Jan 2026 |
 
