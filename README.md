@@ -103,6 +103,10 @@ Every expert was once a beginner.
 
 ###
 
-<h3 align="left">🔥   My Stats :</h3>
+## Team Stats
+
+![Commits](https://img.shields.io/github/commit-activity/m/<username>/<repo>?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/<username>/<repo>?style=for-the-badge)
+
 
 ###
