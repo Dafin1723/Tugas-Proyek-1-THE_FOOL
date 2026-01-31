@@ -13,15 +13,75 @@
 
 ###
 
-<h3 align="left">👩‍💻  About Me</h3>
+# 🃏 THE FOOL
 
-###
+## About Us
 
-<p align="left">we from Ihsanul Fikri High School<br>- for our internship project at GAMELAB</p>
+**THE FOOL** is a small team consisting of three members:
+- **Dafin**
+- **Fikri**
+- **Amru**
 
-###
+This team was formed to work on an **internship project from Gamelab**.  
+More than just completing tasks, this repository represents our learning journey, collaboration, and growth as a team.
 
-<h3 align="left">🛠 Language and tools</h3>
+---
+
+## 📖 Training Background
+
+Before starting the main internship project, we completed **3 weeks of intensive training**, covering essential fundamentals:
+
+- **Python Basics**
+- **Git & Git Collaboration**
+
+This training helped us build a strong foundation in programming logic, version control, and teamwork.  
+It also trained us to work with structured workflows and proper collaboration practices.
+
+---
+
+## 🃏 The Meaning Behind “THE FOOL”
+
+The name **THE FOOL** is inspired by the donghua **Lord of the Mysteries (LOTM)**.
+
+In LOTM, *The Fool* does not symbolize stupidity.  
+It represents **the beginning of a journey** — a figure who starts with limited knowledge but unlimited potential.
+
+For us, **THE FOOL** stands for:
+- Starting from zero without pretending to know everything  
+- Having the courage to learn, explore, and make mistakes  
+- Staying humble while continuously improving  
+
+As interns, we accept that we are still learners.  
+This name reminds us to stay curious, grounded, and consistent throughout our internship journey.
+
+---
+
+## 🎯 Team Goals
+
+Our main objectives during this internship are:
+- Strengthening programming skills, especially in Python  
+- Practicing real-world collaboration using Git  
+- Applying training knowledge into real projects  
+- Building discipline, responsibility, and teamwork  
+
+---
+
+## 🛠 Repository Purpose
+
+This repository serves as:
+- A collaboration space for team development  
+- A collection of training exercises and internship projects  
+- Documentation of our progress during the Gamelab internship  
+
+Every contribution is made with the goal of learning together and improving as a team.
+
+---
+
+## 🚀 Closing Note
+
+Every expert was once a beginner.  
+**THE FOOL** reminds us that true growth begins when we are willing to learn.
+
 
 ###
 
