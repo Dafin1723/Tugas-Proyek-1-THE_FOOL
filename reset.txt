@@ -13,3 +13,4 @@ c. Tisu
 Kertas tisu digunakan untuk membersihkan berbagai peralatan TIK yang
 memiliki sifat dan kebutuhan mutu yang berbeda meliputi kekuatan, daya
 serap, berat dasar, dan ketebalan.
+dead
