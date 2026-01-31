@@ -105,8 +105,13 @@ Every expert was once a beginner.
 
 ## Team Stats
 
-![Commits](https://img.shields.io/github/commit-activity/m/<username>/<repo>?style=for-the-badge)
-![Contributors](https://img.shields.io/github/contributors/<username>/<repo>?style=for-the-badge)
+## 🏆 Team Contribution Stats
+
+| Member | Commits | Last Commit |
+|--------|--------|------------|
+| Dafin  | 8     | 30 Jan 2026 |
+| Fikri  | 0      | 31 Jan 2026 |
+| Amru   | 0      | 30 Jan 2026 |
 
 
 ###
