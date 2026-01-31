@@ -1,4 +1,4 @@
-![Alt text](github-header-banner.png "a title")
+![banner](img/github-header-banner.png)
 ###
 
 <div align="center">
