@@ -1,0 +1,23 @@
+Perawatan tidak terencana adalah jenis perawatan yang bersifat perbaikan
+terhadap kerusakan yang tidak diperkirakan sebelumnya. Pekerjaan perawatan ini
+tidak direncanakan, dan tidak dijadwalkan. Umumnya tingkat kerusakan yang
+terjadi adalah tingkat kerusakan berat. Perawatan jenis ini juga disebut perawatan
+darurat, karena pengerjaanya tidak direncanakan sebelumnya.
+Alat yang digunakan sangat mudah untuk dijumpai bahkan sering digunakan untuk
+kegiatan sehari hari. Berikut ini adalah alat yang dapat digunakan untuk melakukan
+perawatan peralatan TIK
+a. Kuas
+Kuas merupakan peralatan yang digunakan untuk membersihkan debu yang
+menempel pada bagian luar peralatan TIK
+PANDUAN PERAWATAN DAN TROUBLESHOOTING PERALATAN TIK SMA TAHUN 2021
+4 | BUKU 6
+Gambar 1. Kuas
+b. Blower Karet
+Blower karet dapat digunakan untuk membersihkan celah-celah kecil yang
+sulit dijangkau, dan sangat cocok digunakan untuk membersihkan sela-sela
+tuts keyboard.
+Gambar 2. Kuas
+c. Tisu
+Kertas tisu digunakan untuk membersihkan berbagai peralatan TIK yang
+memiliki sifat dan kebutuhan mutu yang berbeda meliputi kekuatan, daya
+serap, berat dasar, dan ketebalan.
