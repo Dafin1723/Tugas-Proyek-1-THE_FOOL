@@ -9,7 +9,7 @@
 
 ###
 
-![Demo Animasi](https://64.media.tumblr.com/e782d3c1b1f8e693555d792f9a391419/7b87b77326581f1b-05/s640x360/99212a195b8dc42dd56cfc3f738fc012fbabfcb0.gif)
+<h1 align="center">hey there 👋</h1>
 
 ###
 
@@ -116,4 +116,4 @@ Every expert was once a beginner.
 
 ###
 
-
+![Demo Animasi](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
