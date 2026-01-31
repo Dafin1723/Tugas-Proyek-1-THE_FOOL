@@ -7,15 +7,7 @@ Alat yang digunakan sangat mudah untuk dijumpai bahkan sering digunakan untuk
 kegiatan sehari hari. Berikut ini adalah alat yang dapat digunakan untuk melakukan
 perawatan peralatan TIK
 a. Kuas
-Kuas merupakan peralatan yang digunakan untuk membersihkan debu yang
-menempel pada bagian luar peralatan TIK
-PANDUAN PERAWATAN DAN TROUBLESHOOTING PERALATAN TIK SMA TAHUN 2021
-4 | BUKU 6
-Gambar 1. Kuas
-b. Blower Karet
-Blower karet dapat digunakan untuk membersihkan celah-celah kecil yang
-sulit dijangkau, dan sangat cocok digunakan untuk membersihkan sela-sela
-tuts keyboard.
+Kuas merupakan pera
 Gambar 2. Kuas
 c. Tisu
 Kertas tisu digunakan untuk membersihkan berbagai peralatan TIK yang
