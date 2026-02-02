@@ -111,7 +111,7 @@ Every expert was once a beginner.
 |--------|--------|------------|
 | Dafin  | 16     | 30 Jan 2026 |
 | Fikri  | 0      | 31 Jan 2026 |
-| Amru   | 1      | 30 Jan 2026 | (Edited Manual)
+| Amru   | 0      | 30 Jan 2026 |
 
 
 ###
