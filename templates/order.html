@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <h2>Print Order Form</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Upload File:</label><br>
+        <input type="file" name="file" required><br><br>
+
+        <label>Print Type:</label><br>
+        <select name="print_type" required>
+            <option value="Black & White">Black & White</option>
+            <option value="Color">Color</option>
+        </select><br><br>
+
+        <label>Copies:</label><br>
+        <input type="number" name="copies" min="1" required><br><br>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

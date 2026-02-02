@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h2>Admin - Print Orders</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>File</th>
+            <th>Type</th>
+            <th>Copies</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>
+                <a href="/download/{{ order.filename }}">
+                    {{ order.filename }}
+                </a>
+            </td>
+            <td>{{ order.print_type }}</td>
+            <td>{{ order.copies }}</td>
+            <td>{{ order.status }}</td>
+            <td>
+                <a href="/update/{{ order.id }}/Completed">Complete</a> |
+                <a href="/update/{{ order.id }}/Canceled">Cancel</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
