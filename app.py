@@ -1,7 +1,11 @@
 from flask import flask, render_template, request, redirect, url_for, send_from_directory
 import sqlite3
 import os
+from flask import session
 from datetime import datetime
+
+
+app.secret_key = "thefool-secret"
 
 
 app = flask(_name_)
@@ -73,6 +77,9 @@ def success():
 
 @app.route("/admin")
 def admin():
+    if not session.get("admin"):
+        return redirect(url_for("login"))
+
     conn = get_db_connection()
     orders = conn.execute("SELECT * FROM orders ORDER BY id DESC").fetchall()
     conn.close()
@@ -92,6 +99,19 @@ def update_status(order_id, status):
 @app.route("/download/<filename>")
 def download_file(filename):
     return send_from_directory(app.config["UPLOAD_FOLDER"], filename, as_attachment=True)
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+
+        if username == "admin" and password == "admin123":
+            session["admin"] = True
+            return redirect(url_for("admin"))
+
+    return render_template("login.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
