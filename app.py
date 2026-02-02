@@ -1,15 +1,15 @@
-from flask import flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session
 import sqlite3
 import os
 from flask import session
 from datetime import datetime
 
 
+
+
+
+app = Flask(__name__)
 app.secret_key = "thefool-secret"
-
-
-app = flask(_name_)
-
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
@@ -46,7 +46,7 @@ init_db
 
 @app.route("/")
 def index():
-    return render_template(index.html)
+    return render_template("index.html")
 
 @app.route("/order", methods=["GET", "POST"])
 def order():
