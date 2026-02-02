@@ -111,9 +111,16 @@ Every expert was once a beginner.
 |--------|--------|------------|
 | Dafin  | 16     | 30 Jan 2026 |
 | Fikri  | 0      | 31 Jan 2026 |
-| Amru   | 1      | 30 Jan 2026 | (Edited Manual)
+| Amru   | 0      | 30 Jan 2026 |
 
 
 ###
 
 ![Demo Animasi](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnMyMXJhMjBjbnFiNjhhMDBjemFrN3k0bW1oZXN0YmwxbmZtZzZoYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JCIWBz8oRRLZmZhNn/giphy.gif)
+
+---
+
+# Branch Description
+
+This branch is just to separate between contributing person.
+Branch ini hanya untuk memisahkan kontribusi per orang.
