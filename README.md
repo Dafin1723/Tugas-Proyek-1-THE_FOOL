@@ -120,4 +120,7 @@ Every expert was once a beginner.
 
 ---
 
-# This branch is just to separating between contributing person
+# Branch Description
+
+This branch is just to separate between contributing person.
+Branch ini hanya untuk memisahkan kontribusi per orang.
