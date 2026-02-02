@@ -7,6 +7,14 @@
   <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="twitter logo"  />
 </div>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
+</picture>
+
+
+
 ###
 
 <h1 align="center">hey there 👋</h1>
@@ -166,10 +174,6 @@ Branch ini hanya untuk memisahkan kontribusi per orang.
 
 ###
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
-</picture>
+
 
 ###
