@@ -21,74 +21,67 @@
 
 ###
 
-# 🃏 THE FOOL
+## 👥 THE FOOL
+Tentang Kami
 
-## About Us
+THE FOOL adalah kelompok yang beranggotakan tiga orang:
 
-**THE FOOL** is a small team consisting of three members:
-- **Dafin**
-- **Fikri**
-- **Amru**
+Dafin
 
-This team was formed to work on an **internship project from Gamelab**.  
-More than just completing tasks, this repository represents our learning journey, collaboration, and growth as a team.
+Fikri
 
----
+Amru
 
-## 📖 Training Background
+Kelompok ini dibentuk untuk mengerjakan proyek magang dari Gamelab, sekaligus menjadi wadah belajar, latihan, dan kolaborasi selama proses magang berlangsung.
 
-Before starting the main internship project, we completed **3 weeks of intensive training**, covering essential fundamentals:
+Repository ini digunakan sebagai tempat menyimpan hasil latihan, eksperimen, dan pengembangan proyek yang kami kerjakan bersama.
 
-- **Python Basics**
-- **Git & Git Collaboration**
+## 📚 Latar Belakang Training
 
-This training helped us build a strong foundation in programming logic, version control, and teamwork.  
-It also trained us to work with structured workflows and proper collaboration practices.
+Sebelum masuk ke pengerjaan proyek utama, kami telah menjalani training selama 3 minggu dengan materi dasar yang menjadi fondasi kami, yaitu:
 
----
+Python Basic sebagai dasar pemrograman
 
-## 🃏 The Meaning Behind “THE FOOL”
+Git & Git Collaboration untuk mengatur versi kode dan kerja tim
 
-The name **THE FOOL** is inspired by the donghua **Lord of the Mysteries (LOTM)**.
+Training ini membantu kami memahami cara menulis kode yang lebih terstruktur, bekerja secara kolaboratif, dan membiasakan diri dengan workflow pengembangan yang rapi.
 
-In LOTM, *The Fool* does not symbolize stupidity.  
-It represents **the beginning of a journey** — a figure who starts with limited knowledge but unlimited potential.
+## 🃏 Arti Nama Kelompok: THE FOOL
 
-For us, **THE FOOL** stands for:
-- Starting from zero without pretending to know everything  
-- Having the courage to learn, explore, and make mistakes  
-- Staying humble while continuously improving  
+Nama THE FOOL terinspirasi dari donghua Lord of the Mysteries (LOTM).
+Bagi kami, The Fool bukan sekadar “si bodoh”, tapi simbol dari seseorang yang berada di awal perjalanan.
 
-As interns, we accept that we are still learners.  
-This name reminds us to stay curious, grounded, and consistent throughout our internship journey.
+The Fool melambangkan:
 
----
+Awal yang kosong, tapi penuh potensi
 
-## 🎯 Team Goals
+Keberanian untuk belajar dari nol
 
-Our main objectives during this internship are:
-- Strengthening programming skills, especially in Python  
-- Practicing real-world collaboration using Git  
-- Applying training knowledge into real projects  
-- Building discipline, responsibility, and teamwork  
+Kesediaan untuk mencoba, gagal, lalu berkembang
 
----
+Sebagai peserta magang, kami sadar bahwa kami masih di tahap belajar. Nama THE FOOL mengingatkan kami untuk tetap rendah hati, terbuka terhadap ilmu baru, dan terus berkembang seiring proses yang dijalani.
 
-## 🛠 Repository Purpose
+## 🎯 Tujuan Kelompok
 
-This repository serves as:
-- A collaboration space for team development  
-- A collection of training exercises and internship projects  
-- Documentation of our progress during the Gamelab internship  
+Melalui proyek magang ini, kami memiliki beberapa tujuan utama:
 
-Every contribution is made with the goal of learning together and improving as a team.
+Mengembangkan kemampuan pemrograman, khususnya Python
 
----
+Membiasakan kerja tim menggunakan Git
 
-## 🚀 Closing Note
+Menerapkan ilmu training ke dalam proyek nyata
 
-Every expert was once a beginner.  
-**THE FOOL** reminds us that true growth begins when we are willing to learn.
+Melatih tanggung jawab dan konsistensi dalam menyelesaikan tugas
+
+## 🔧 Tentang Repository Ini
+
+Repository ini berfungsi sebagai:
+
+Media kolaborasi antar anggota tim
+
+Tempat menyimpan hasil latihan dan proyek
+
+Dokumentasi progres selama magang di Gamelab
 
 
 ###
