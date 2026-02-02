@@ -165,3 +165,11 @@ Branch ini hanya untuk memisahkan kontribusi per orang.
 </div>
 
 ###
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
+</picture>
+
+###
