@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Pesanan</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <!-- Tombol Kembali -->
+    <a href="/admin" class="btn btn-secondary mb-3">
+        ⬅ Kembali ke Dashboard
+    </a>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0">📄 Detail Pesanan Print</h4>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-borderless">
+
+                <tr>
+                    <th width="200">ID Pesanan</th>
+                    <td>: {{ pesanan.id }}</td>
+                </tr>
+
+                <tr>
+                    <th>Nama Pemesan</th>
+                    <td>: {{ pesanan.nama }}</td>
+                </tr>
+
+                <tr>
+                    <th>Kontak</th>
+                    <td>: {{ pesanan.kontak }}</td>
+                </tr>
+
+                <tr>
+                    <th>Jenis Print</th>
+                    <td>: {{ pesanan.jenis_print }}</td>
+                </tr>
+
+                <tr>
+                    <th>Ukuran</th>
+                    <td>: {{ pesanan.ukuran }}</td>
+                </tr>
+
+                <tr>
+                    <th>Jumlah</th>
+                    <td>: {{ pesanan.jumlah }}</td>
+                </tr>
+
+                <tr>
+                    <th>File</th>
+                    <td>
+                        :
+                        <a href="/download/{{ pesanan.file_path.split('/')[-1] }}" 
+                           class="btn btn-sm btn-primary">
+                            ⬇ Download File
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Status</th>
+                    <td>
+                        :
+
+                        {% if pesanan.status == 'pending' %}
+                            <span class="badge bg-warning text-dark">Pending</span>
+
+                        {% elif pesanan.status == 'selesai' %}
+                            <span class="badge bg-success">Selesai</span>
+
+                        {% elif pesanan.status == 'batal' %}
+                            <span class="badge bg-danger">Batal</span>
+
+                        {% endif %}
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
