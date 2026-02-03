@@ -1,0 +1,31 @@
+<form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" name="nama" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email / No. HP</label>
+                <input type="text" name="kontak" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Jenis Print</label>
+                <select name="jenis_print" class="form-select">
+                    <option value="hitam-putih">Hitam Putih</option>
+                    <option value="warna">Warna</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ukuran Kertas</label>
+                <select name="ukuran" class="form-select">
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Jumlah Lembar</label>
+                <input type="number" name="jumlah" class="form-control" min="1" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Upload File (PDF/JPG/PNG/DOCX)</label>
+                <input type="file" name="file" class="form-control" accept=".pdf,.jpg,.png,.docx" required>
+            </div>
