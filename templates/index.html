@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Print Order</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta charset="UTF-8">
-    <title>School Print Service</title>
 </head>
 <body>
-    <h1>School Print Service</h1>
-    <p>Online print ordering system</p>
+<div class="box">
+    <h2>Online Print Order</h2>
 
-    <a href="/order">Order Print</a> |
-    <a href="/admin">Admin Panel</a>
+    <form method="POST">
+        <label>File Name</label>
+        <input type="text" name="filename" required>
+
+        <label>Print Type</label>
+        <select name="print_type">
+            <option>Black & White</option>
+            <option>Color</option>
+        </select>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" required>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <p><a href="/login">Admin Login</a></p>
+</div>
 </body>
 </html>

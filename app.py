@@ -1,116 +1,79 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session
+from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
-import os
-from flask import session
 from datetime import datetime
-
-
-
-
 
 app = Flask(__name__)
 app.secret_key = "thefool-secret"
-UPLOAD_FOLDER = "uploads"
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-
-
-def get_db_connection():
-    conn : sqlite3.connect("database.db")
+# ---------- DATABASE ----------
+def get_db():
+    conn = sqlite3.connect("database.db")
     conn.row_factory = sqlite3.Row
     return conn
 
 def init_db():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute("""
+    conn = get_db()
+    conn.execute("""
         CREATE TABLE IF NOT EXISTS orders (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             filename TEXT,
             print_type TEXT,
-            copies INTEGER,
-            status TEXT,
-            created_at TEXT
+            quantity INTEGER,
+            created_at TEXT,
+            status TEXT
         )
     """)
     conn.commit()
     conn.close()
 
+init_db()
 
-
-init_db
-
-
-
-@app.route("/")
+# ---------- ROUTES ----------
+@app.route("/", methods=["GET", "POST"])
 def index():
+    if request.method == "POST":
+        filename = request.form["filename"]
+        print_type = request.form["print_type"]
+        quantity = request.form["quantity"]
+
+        conn = get_db()
+        conn.execute("""
+            INSERT INTO orders 
+            (filename, print_type, quantity, created_at, status)
+            VALUES (?, ?, ?, ?, ?)
+        """, (filename, print_type, quantity, datetime.now().strftime("%Y-%m-%d %H:%M"), "Pending"))
+        conn.commit()
+        conn.close()
+
+        return redirect(url_for("index"))
+
     return render_template("index.html")
 
-@app.route("/order", methods=["GET", "POST"])
-def order():
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
     if request.method == "POST":
-        file = request.files["file"]
-        print_type = request.form["print_type"]
-        copies = request.form["copies"]
+        if request.form["username"] == "admin" and request.form["password"] == "admin123":
+            session["admin"] = True
+            return redirect(url_for("admin"))
+    return render_template("login.html")
 
-        if file:
-            filename = file.filename
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-
-            conn = get_db_connection()
-            conn.execute(
-                "INSERT INTO orders (filename, print_type, copies, status, created_at) VALUES (?, ?, ?, ?, ?)",
-                (filename, print_type, copies, "Pending", datetime.now())
-            )
-            conn.commit()
-            conn.close()
-
-            return redirect(url_for("success"))
-
-    return render_template("order.html")
-
-@app.route("/success")
-def success():
-    return render_template("success.html")
 
 @app.route("/admin")
 def admin():
     if not session.get("admin"):
         return redirect(url_for("login"))
 
-    conn = get_db_connection()
+    conn = get_db()
     orders = conn.execute("SELECT * FROM orders ORDER BY id DESC").fetchall()
     conn.close()
     return render_template("admin.html", orders=orders)
 
-@app.route("/update/<int:order_id>/<status>")
-def update_status(order_id, status):
-    conn = get_db_connection()
-    conn.execute(
-        "UPDATE orders SET status = ? WHERE id = ?",
-        (status, order_id)
-    )
-    conn.commit()
-    conn.close()
-    return redirect(url_for("admin"))
 
-@app.route("/download/<filename>")
-def download_file(filename):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], filename, as_attachment=True)
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
-
-        if username == "admin" and password == "admin123":
-            session["admin"] = True
-            return redirect(url_for("admin"))
-
-    return render_template("login.html")
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
