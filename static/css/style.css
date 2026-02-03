@@ -1,0 +1,36 @@
+body {
+    background-color: #f8f9fa;
+}
+
+/* Judul */
+h3 {
+    font-weight: bold;
+}
+
+/* Table style */
+.table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Hover efek */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Badge ukuran */
+.badge {
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+/* Dropdown kecil */
+.form-select-sm {
+    font-size: 13px;
+}
+
+/* Tombol download */
+.btn-primary {
+    font-size: 13px;
+}
