@@ -1,36 +1,132 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+
 body {
-    background-color: #f8f9fa;
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* Judul */
-h3 {
+/* =========================
+   JUDUL HALAMAN
+========================= */
+
+h3, h4 {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* =========================
+   TABLE ADMIN
+========================= */
+
+.table {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Header tabel */
+.table thead th {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Isi tabel */
+.table tbody td {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* Hover row */
+.table tbody tr {
+    transition: 0.2s ease-in-out;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f5ff;
+}
+
+/* =========================
+   BADGE STATUS
+========================= */
+
+.badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* =========================
+   BUTTON STYLE
+========================= */
+
+.btn {
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* Download Button */
+.btn-primary {
+    padding: 5px 10px;
+}
+
+/* Detail Button */
+.btn-info {
+    padding: 5px 10px;
+    color: #fff;
+}
+
+/* Back Button */
+.btn-secondary {
+    padding: 6px 12px;
+}
+
+/* =========================
+   SELECT DROPDOWN
+========================= */
+
+.form-select-sm {
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+/* =========================
+   CARD (DETAIL PESANAN)
+========================= */
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
     font-weight: bold;
 }
 
-/* Table style */
-.table {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
+.card-body table th {
+    font-weight: 600;
 }
 
-/* Hover efek */
-.table tbody tr:hover {
-    background-color: #f1f1f1;
-}
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
 
-/* Badge ukuran */
-.badge {
-    font-size: 13px;
-    padding: 6px 10px;
-}
+@media (max-width: 768px) {
 
-/* Dropdown kecil */
-.form-select-sm {
-    font-size: 13px;
-}
+    h3 {
+        font-size: 18px;
+    }
 
-/* Tombol download */
-.btn-primary {
-    font-size: 13px;
+    .table {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
 }
