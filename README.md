@@ -13,8 +13,6 @@
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
 </picture>
 
-
-
 ###
 
 <h1 align="center">hey there 👋</h1>
