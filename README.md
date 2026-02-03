@@ -13,8 +13,6 @@
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/pacman-contribution-graph.svg">
 </picture>
 
-
-
 ###
 
 <h1 align="center">hey there 👋</h1>
@@ -102,7 +100,7 @@ Dokumentasi progres selama magang di Gamelab
 |--------|--------|------------|
 | Dafin  | 16     | 30 Jan 2026 |
 | Fikri  | 0      | 31 Jan 2026 |
-| Amru   | 8      | 30 Jan 2026 |
+| Amru   | 9      | 30 Jan 2026 |
 
 
 ###
@@ -113,9 +111,6 @@ Dokumentasi progres selama magang di Gamelab
 
 # Branch Description
 
-This branch is just to separate between contributing person.
+Those branch is just to separate between contributing person.
 
-Branch ini hanya untuk memisahkan kontribusi per orang.
-
-
---
+Branch di project ini hanya untuk memisahkan kontribusi per orang.
