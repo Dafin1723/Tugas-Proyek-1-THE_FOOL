@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}Produk - UNIT PRODUSI{% endblock %}
+
+{% block extra_head %}
+<style>
+    .hero-bg {
+        background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+        color: white;
+        padding: 100px 0 80px;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    .product-card {
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    .product-card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+    .card-img-top {
+        height: 220px;
+        background: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        color: #e9ecef;
+    }
+    .status-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 6px 14px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+    .available { background: #198754; color: white; }
+    .coming-soon { background: #ffc107; color: #212529; }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section Premium -->
+<section class="hero-bg text-center">
+    <div class="container">
+        <h1 class="display-3 fw-bold mb-3">UNIT PRODUSI</h1>
+        <p class="lead fs-4 mb-4 opacity-90">Cetak Custom Berkualitas Tinggi untuk Sekolah, Organisasi, Event & Pribadi</p>
+        <p class="fs-5 mb-0">Solusi satu atap: dari print biasa sampai merchandise custom premium</p>
+    </div>
+</section>
+
+<!-- Produk Grid -->
+<section class="container py-5">
+    <div class="row g-4 justify-content-center">
+        <!-- 1. Print & Fotocopy - Tersedia -->
+        <div class="col-lg-4 col-md-6">
+            <div class="product-card position-relative">
+                <span class="status-badge available">Tersedia Sekarang</span>
+                <div class="card-img-top">
+                    <i class="bi bi-printer-fill"></i>
+                </div>
+                <div class="card-body text-center p-4">
+                    <h5 class="card-title fw-bold fs-4">Print & Fotocopy</h5>
+                    <p class="card-text text-muted mb-4">
+                        Hitam putih / full color • A4, A3, F4 • Kertas HVS, Art Carton, Foto Paper • Cepat, murah, hasil tajam
+                    </p>
+                    <a href="/" class="btn btn-primary btn-lg w-100 fw-bold">Pesan Print Sekarang</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Mug Printing - Coming Soon -->
+        <div class="col-lg-4 col-md-6">
+            <div class="product-card position-relative">
+                <span class="status-badge coming-soon">Coming Soon</span>
+                <div class="card-img-top">
+                    <i class="bi bi-cup-hot-fill"></i>
+                </div>
+                <div class="card-body text-center p-4">
+                    <h5 class="card-title fw-bold fs-4">Mug Printing Custom</h5>
+                    <p class="card-text text-muted mb-4">
+                        Cetak foto, logo, nama di mug keramik premium • Tahan panas & cuci mesin • Souvenir event & hadiah terbaik
+                    </p>
+                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Pin Custom - Coming Soon -->
+        <div class="col-lg-4 col-md-6">
+            <div class="product-card position-relative">
+                <span class="status-badge coming-soon">Coming Soon</span>
+                <div class="card-img-top">
+                    <i class="bi bi-pin-angle-fill"></i>
+                </div>
+                <div class="card-body text-center p-4">
+                    <h5 class="card-title fw-bold fs-4">Pin Custom</h5>
+                    <p class="card-text text-muted mb-4">
+                        Badge metal/plastik custom • Ukuran 2.5–5 cm • Desain full color • Cocok OSIS, komunitas, merchandise
+                    </p>
+                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Keychain Custom - Coming Soon -->
+        <div class="col-lg-4 col-md-6">
+            <div class="product-card position-relative">
+                <span class="status-badge coming-soon">Coming Soon</span>
+                <div class="card-img-top">
+                    <i class="bi bi-key-fill"></i>
+                </div>
+                <div class="card-body text-center p-4">
+                    <h5 class="card-title fw-bold fs-4">Gantungan Kunci Custom</h5>
+                    <p class="card-text text-muted mb-4">
+                        Akrilik, resin, atau stainless • Cetak UV / sublimasi • Awet & ringan • Souvenir kelas & event
+                    </p>
+                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Sablon Baju - Coming Soon -->
+        <div class="col-lg-4 col-md-6">
+            <div class="product-card position-relative">
+                <span class="status-badge coming-soon">Coming Soon</span>
+                <div class="card-img-top">
+                    <i class="bi bi-t-shirt-fill"></i>
+                </div>
+                <div class="card-body text-center p-4">
+                    <h5 class="card-title fw-bold fs-4">Sablon Baju & Kaos</h5>
+                    <p class="card-text text-muted mb-4">
+                        Sablon manual/digital • DTG • Heat transfer • Kaos oblong, polo, jaket • Minimal order ramah
+                    </p>
+                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bonus: Stiker Custom - Coming Soon -->
+        <div class="col-lg-4 col-md-6">
+            <div class="product-card position-relative">
+                <span class="status-badge coming-soon">Coming Soon</span>
+                <div class="card-img-top">
+                    <i class="bi bi-tags-fill"></i>
+                </div>
+                <div class="card-body text-center p-4">
+                    <h5 class="card-title fw-bold fs-4">Stiker & Label Custom</h5>
+                    <p class="card-text text-muted mb-4">
+                        Vinyl, hologram, kertas • Die-cut bebas bentuk • Untuk botol, laptop, kemasan, promosi
+                    </p>
+                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="text-center mt-5 pt-5">
+        <h3 class="fw-bold display-5 mb-3">Siap Cetak Custom?</h3>
+        <p class="lead text-muted mb-4">Mulai dari print sederhana sampai merchandise premium – UNIT PRODUSI siap bantu!</p>
+        <a href="/" class="btn btn-primary btn-lg px-5 py-3 fw-bold shadow-lg">Pesan Print Sekarang</a>
+        <p class="mt-4 text-muted small">Lokasi: [Masukkan alamat unit produksi sekolah di sini]</p>
+    </div>
+</section>
+{% endblock %}

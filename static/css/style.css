@@ -190,3 +190,22 @@ h3, h4 {
 body {
     background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
 }
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+
+.card-img-top {
+    background: #f1f3f5;
+}
+
+.btn-outline-primary:hover, .btn-outline-success:hover, etc {
+    color: white !important;
+}

@@ -5,19 +5,19 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-app.secret_key = 'ganti-rahasia-ini-pake-string-random-panjang-bro'  # WAJIB ganti!
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'     # atau db.sqlite3 kalau mau ganti
+app.secret_key = 'rahasia-super-panjang-ubah-ini-pake-os-urandom-bro'  # WAJIB ganti pake yang random!
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'png', 'jpg', 'jpeg', 'docx'}
 
 db = SQLAlchemy(app)
 
-# Model Pesanan (paste ini kalau belum ada class model)
+# Model Pesanan
 class Pesanan(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nama = db.Column(db.String(100), nullable=False)
-    kontak = db.Column(db.String(100))  # email atau no HP
+    kontak = db.Column(db.String(100))
     jenis_print = db.Column(db.String(50))
     ukuran = db.Column(db.String(20))
     jumlah = db.Column(db.Integer)
@@ -25,15 +25,27 @@ class Pesanan(db.Model):
     status = db.Column(db.String(20), default='pending')  # pending, selesai, batal
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-# Buat tabel kalau belum ada (paste ini di bawah model)
+# Buat tabel kalau belum ada
 with app.app_context():
     db.create_all()
 
 def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+# Root langsung ke halaman produk (sesuai request client terbaru)
+@app.route('/')
+def home():
+    return redirect(url_for('produk'))
+
+# Halaman Produk (yang utama sekarang)
+@app.route('/produk')
+def produk():
+    return render_template('produk.html')
+
+# Halaman Pesan Print (form upload) - pindah ke /pesan biar ga bentrok dengan root
+@app.route('/pesan', methods=['GET', 'POST'])
+def pesan():
     if request.method == 'POST':
         nama = request.form.get('nama')
         kontak = request.form.get('kontak')
@@ -52,31 +64,35 @@ def index():
             db.session.add(pesanan)
             db.session.commit()
 
-            flash('Pesanan berhasil dikirim! Tunggu ya, admin lagi cek.', 'success')
+            flash('Pesanan berhasil dikirim! Tunggu admin cek ya.', 'success')
         else:
-            flash('File ga valid atau kosong bro.', 'danger')
+            flash('File tidak valid atau kosong.', 'danger')
 
-        return redirect(url_for('index'))
+        return redirect(url_for('pesan'))
 
-    return render_template('user/index.html')
+    return render_template('user/index.html')  # atau templates/index.html kalau flat
 
+# Admin Dashboard
 @app.route('/admin')
 def admin():
     pesanan_list = Pesanan.query.order_by(Pesanan.created_at.desc()).all()
     return render_template('admin/dashboard.html', pesanan=pesanan_list)
 
+# Update Status Pesanan
 @app.route('/update/<int:id>', methods=['POST'])
 def update(id):
     pesanan = Pesanan.query.get_or_404(id)
     pesanan.status = request.form['status']
     db.session.commit()
-    flash('Status updated!', 'info')
+    flash('Status berhasil diupdate!', 'info')
     return redirect(url_for('admin'))
 
+# Download File Pesanan
 @app.route('/download/<filename>')
 def download(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
-
 if __name__ == '__main__':
+    # Buat folder uploads kalau belum ada
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     app.run(debug=True)
