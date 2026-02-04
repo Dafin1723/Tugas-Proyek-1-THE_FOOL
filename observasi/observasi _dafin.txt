@@ -1,0 +1,19 @@
+Update Pain Points dari Wawancara Ini (untuk tambah ke observasi.pdf)
+Tambahin section baru atau expand di Pain Points Utama:
+
+Kendala Transfer File (Top Issue)
+Harus bawa flashdisk → lupa bawa, flashdisk rusak/hilang, atau laptop/HP ga punya port USB mudah.
+Email kadang limit attachment (Gmail 25MB, kalau file > itu harus compress atau split).
+Ga ada opsi kirim langsung via HP yang nyaman (WA biasa limit 100MB/file, tapi kalau banyak file susah manage).
+Pas mendekati ujian: butuh print massal (materi e-book bisa ratusan halaman, poster A3/A4 gambar, formulir pendaftaran), jadi transfer manual makin males.
+
+Frekuensi & Jenis Print
+Peak: menjelang ujian/UTS/tryout.
+Jenis: materi e-book (PDF scan/banyak halaman), poster/gambar (resolusi tinggi, warna), formulir (biasa hitam putih, tapi butuh banyak lembar).
+
+Harapan Fitur Prioritas #1
+Kirim file termudah → dari HP langsung tanpa ribet.
+Ideal: integrasi WhatsApp (kirim file ke nomor WA service → otomatis terdeteksi).
+Atau upload via web/app mobile-friendly (drag & drop, support PDF, DOCX, JPG/PNG, max 100–200MB).
+Support cloud langsung: Google Drive / OneDrive link (share link aja, ga perlu download ulang).
+Preview file sebelum konfirmasi pesan (biar ga salah print halaman).
