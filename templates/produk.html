@@ -1,172 +1,276 @@
 {% extends "base.html" %}
 
-{% block title %}Produk - UNIT PRODUSI{% endblock %}
+{% block title %}UNIT PRODUSI — Produk{% endblock %}
 
 {% block extra_head %}
 <style>
-    .hero-bg {
-        background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
-        color: white;
-        padding: 100px 0 80px;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    /* RESET THEME */
+    :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --text-main: #0a0a0a;
+        --text-subtle: #6b7280;
+        --line: #e5e7eb;
+        --accent: #111827;
+
+        --radius: 14px;
+        --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
     }
+
+    body {
+        background: var(--bg);
+        color: var(--text-main);
+    }
+
+    /* HERO */
+    .hero {
+        background: var(--bg);
+        padding: 4.5rem 0 3.5rem;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero .lead {
+        font-size: 1.05rem;
+        color: var(--text-subtle);
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    /* MAIN CONTAINER */
+    .container-main {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 4.5rem 1.5rem;
+    }
+
+    /* GRID */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.8rem;
+    }
+
+    /* CARD */
     .product-card {
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: none;
-        border-radius: 16px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
         overflow: hidden;
-        background: white;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
+
     .product-card:hover {
-        transform: translateY(-12px) scale(1.03);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-soft);
     }
-    .card-img-top {
-        height: 220px;
-        background: #f8f9fa;
+
+    /* IMAGE AREA */
+    .product-image {
+        height: 240px;
+        background: #fafafa;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 5rem;
-        color: #e9ecef;
+        color: #d1d5db;
     }
+
+    /* BODY */
+    .product-body {
+        padding: 2rem 2rem 2.3rem;
+        text-align: center;
+    }
+
+    .product-title {
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+    }
+
+    .product-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-subtle);
+        margin-bottom: 1.6rem;
+    }
+
+    /* BADGE */
     .status-badge {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        padding: 6px 14px;
-        border-radius: 30px;
-        font-size: 0.85rem;
-        font-weight: 600;
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.7rem;
+        padding: 0.35rem 0.85rem;
+        border-radius: 999px;
+        background: #f3f4f6;
+        color: #374151;
+        font-weight: 500;
     }
-    .available { background: #198754; color: white; }
-    .coming-soon { background: #ffc107; color: #212529; }
+
+    /* BUTTON */
+    .btn-action {
+        background: var(--accent);
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.7rem 1.8rem;
+        border-radius: 999px;
+        border: none;
+        transition: opacity 0.25s ease;
+    }
+
+    .btn-action:hover {
+        opacity: 0.85;
+    }
+
+    .btn-disabled {
+        background: #f3f4f6;
+        color: #9ca3af;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.8rem;
+        border-radius: 999px;
+        border: none;
+        cursor: not-allowed;
+    }
+
+    /* CTA */
+    .cta-section {
+        margin-top: 6rem;
+        padding: 4.5rem 0 4rem;
+        text-align: center;
+        border-top: 1px solid var(--line);
+    }
+
+    .cta-title {
+        font-size: 2.1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .cta-desc {
+        font-size: 1.05rem;
+        color: var(--text-subtle);
+        max-width: 620px;
+        margin: 0 auto 2.2rem;
+    }
+</style>
+
 </style>
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section Premium -->
-<section class="hero-bg text-center">
+<section class="hero">
     <div class="container">
-        <h1 class="display-3 fw-bold mb-3">UNIT PRODUSI</h1>
-        <p class="lead fs-4 mb-4 opacity-90">Cetak Custom Berkualitas Tinggi untuk Sekolah, Organisasi, Event & Pribadi</p>
-        <p class="fs-5 mb-0">Solusi satu atap: dari print biasa sampai merchandise custom premium</p>
+        <h1>UNIT PRODUSI</h1>
+        <p class="lead">
+            Cetak premium, custom berkualitas tinggi — dari dokumen hingga merchandise eksklusif
+        </p>
     </div>
 </section>
 
-<!-- Produk Grid -->
-<section class="container py-5">
-    <div class="row g-4 justify-content-center">
-        <!-- 1. Print & Fotocopy - Tersedia -->
-        <div class="col-lg-4 col-md-6">
-            <div class="product-card position-relative">
-                <span class="status-badge available">Tersedia Sekarang</span>
-                <div class="card-img-top">
-                    <i class="bi bi-printer-fill"></i>
-                </div>
-                <div class="card-body text-center p-4">
-                    <h5 class="card-title fw-bold fs-4">Print & Fotocopy</h5>
-                    <p class="card-text text-muted mb-4">
-                        Hitam putih / full color • A4, A3, F4 • Kertas HVS, Art Carton, Foto Paper • Cepat, murah, hasil tajam
-                    </p>
-                    <a href="/pesan" class="btn btn-primary btn-lg w-100 fw-bold">Pesan Print Sekarang</a>
-                </div>
+<div class="container-main">
+    <div class="product-grid">
+
+        <div class="product-card">
+            <div class="product-image">
+                <i class="bi bi-printer-fill"></i>
+            </div>
+            <div class="product-body">
+                <span class="status-badge available">Tersedia</span>
+                <h5 class="product-title">Print & Fotocopy</h5>
+                <p class="product-desc">
+                    Hitam putih / full color • Berbagai ukuran kertas • Cepat, murah, hasil tajam
+                </p>
+                <a href="/pesan" class="btn-action">Pesan Sekarang</a>
             </div>
         </div>
 
-        <!-- 2. Mug Printing - Coming Soon -->
-        <div class="col-lg-4 col-md-6">
-            <div class="product-card position-relative">
+        <div class="product-card">
+            <div class="product-image">
+                <i class="bi bi-cup-hot-fill"></i>
+            </div>
+            <div class="product-body">
                 <span class="status-badge coming-soon">Coming Soon</span>
-                <div class="card-img-top">
-                    <i class="bi bi-cup-hot-fill"></i>
-                </div>
-                <div class="card-body text-center p-4">
-                    <h5 class="card-title fw-bold fs-4">Mug Printing Custom</h5>
-                    <p class="card-text text-muted mb-4">
-                        Cetak foto, logo, nama di mug keramik premium • Tahan panas & cuci mesin • Souvenir event & hadiah terbaik
-                    </p>
-                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
-                </div>
+                <h5 class="product-title">Mug Printing Custom</h5>
+                <p class="product-desc">
+                    Cetak foto/logo/nama • Mug keramik premium • Souvenir kelas & event
+                </p>
+                <button class="btn-disabled">Segera Hadir</button>
             </div>
         </div>
 
-        <!-- 3. Pin Custom - Coming Soon -->
-        <div class="col-lg-4 col-md-6">
-            <div class="product-card position-relative">
+        <div class="product-card">
+            <div class="product-image">
+                <i class="bi bi-pin-angle-fill"></i>
+            </div>
+            <div class="product-body">
                 <span class="status-badge coming-soon">Coming Soon</span>
-                <div class="card-img-top">
-                    <i class="bi bi-pin-angle-fill"></i>
-                </div>
-                <div class="card-body text-center p-4">
-                    <h5 class="card-title fw-bold fs-4">Pin Custom</h5>
-                    <p class="card-text text-muted mb-4">
-                        Badge metal/plastik custom • Ukuran 2.5–5 cm • Desain full color • Cocok OSIS, komunitas, merchandise
-                    </p>
-                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
-                </div>
+                <h5 class="product-title">Pin Custom</h5>
+                <p class="product-desc">
+                    Badge metal/plastik • Full color • Cocok OSIS & komunitas
+                </p>
+                <button class="btn-disabled">Segera Hadir</button>
             </div>
         </div>
 
-        <!-- 4. Keychain Custom - Coming Soon -->
-        <div class="col-lg-4 col-md-6">
-            <div class="product-card position-relative">
+        <div class="product-card">
+            <div class="product-image">
+                <i class="bi bi-key-fill"></i>
+            </div>
+            <div class="product-body">
                 <span class="status-badge coming-soon">Coming Soon</span>
-                <div class="card-img-top">
-                    <i class="bi bi-key-fill"></i>
-                </div>
-                <div class="card-body text-center p-4">
-                    <h5 class="card-title fw-bold fs-4">Gantungan Kunci Custom</h5>
-                    <p class="card-text text-muted mb-4">
-                        Akrilik, resin, atau stainless • Cetak UV / sublimasi • Awet & ringan • Souvenir kelas & event
-                    </p>
-                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
-                </div>
+                <h5 class="product-title">Gantungan Kunci Custom</h5>
+                <p class="product-desc">
+                    Akrilik/resin/metal • Cetak UV • Souvenir ringan & awet
+                </p>
+                <button class="btn-disabled">Segera Hadir</button>
             </div>
         </div>
 
-        <!-- 5. Sablon Baju - Coming Soon -->
-        <div class="col-lg-4 col-md-6">
-            <div class="product-card position-relative">
+        <div class="product-card">
+            <div class="product-image">
+                <i class="bi bi-t-shirt-fill"></i>
+            </div>
+            <div class="product-body">
                 <span class="status-badge coming-soon">Coming Soon</span>
-                <div class="card-img-top">
-                    <i class="bi bi-t-shirt-fill"></i>
-                </div>
-                <div class="card-body text-center p-4">
-                    <h5 class="card-title fw-bold fs-4">Sablon Baju & Kaos</h5>
-                    <p class="card-text text-muted mb-4">
-                        Sablon manual/digital • DTG • Heat transfer • Kaos oblong, polo, jaket • Minimal order ramah
-                    </p>
-                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
-                </div>
+                <h5 class="product-title">Sablon Baju & Kaos</h5>
+                <p class="product-desc">
+                    Manual/digital/DTG • Kaos, polo, jaket • Minimal order ramah
+                </p>
+                <button class="btn-disabled">Segera Hadir</button>
             </div>
         </div>
 
-        <!-- Bonus: Stiker Custom - Coming Soon -->
-        <div class="col-lg-4 col-md-6">
-            <div class="product-card position-relative">
+        <div class="product-card">
+            <div class="product-image">
+                <i class="bi bi-tags-fill"></i>
+            </div>
+            <div class="product-body">
                 <span class="status-badge coming-soon">Coming Soon</span>
-                <div class="card-img-top">
-                    <i class="bi bi-tags-fill"></i>
-                </div>
-                <div class="card-body text-center p-4">
-                    <h5 class="card-title fw-bold fs-4">Stiker & Label Custom</h5>
-                    <p class="card-text text-muted mb-4">
-                        Vinyl, hologram, kertas • Die-cut bebas bentuk • Untuk botol, laptop, kemasan, promosi
-                    </p>
-                    <button class="btn btn-outline-secondary btn-lg w-100 fw-bold" disabled>Segera Hadir</button>
-                </div>
+                <h5 class="product-title">Stiker & Label Custom</h5>
+                <p class="product-desc">
+                    Vinyl/hologram/die-cut • Botol, laptop, kemasan • Promosi & branding
+                </p>
+                <button class="btn-disabled">Segera Hadir</button>
             </div>
         </div>
+
     </div>
 
-    <!-- CTA Final -->
-    <div class="text-center mt-5 pt-5">
-        <h3 class="fw-bold display-5 mb-3">Siap Cetak Custom?</h3>
-        <p class="lead text-muted mb-4">Mulai dari print sederhana sampai merchandise premium – UNIT PRODUSI siap bantu!</p>
-        <a href="/" class="btn btn-primary btn-lg px-5 py-3 fw-bold shadow-lg">Pesan Print Sekarang</a>
-        <p class="mt-4 text-muted small">Lokasi: [Masukkan alamat unit produksi sekolah di sini]</p>
+    <div class="cta-section">
+        <h2 class="cta-title">Mulai Cetak Sekarang</h2>
+        <p class="cta-desc">
+            Dari print harian sampai merchandise custom premium — UNIT PRODUSI siap bantu wujudkan ide kamu.
+        </p>
+        <a href="/pesan" class="btn-action">Pesan Print</a>
     </div>
-</section>
+</div>
 {% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Login Admin - UNIT PRODUSI{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5 pt-5">
+    <div class="col-lg-4 col-md-6">
+        <div class="card shadow-xl border-0 rounded-4 overflow-hidden" style="background: rgba(255,255,255,0.98); backdrop-filter: blur(12px);">
+            <div class="card-header bg-gradient text-white text-center py-5" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6);">
+                <h4 class="mb-2 fw-bold">Admin UNIT PRODUSI</h4>
+                <small class="opacity-75">Akses Khusus Petugas</small>
+            </div>
+            <div class="card-body p-5">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show mb-4">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <form method="POST">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-muted">Username</label>
+                        <input type="text" name="username" class="form-control form-control-lg rounded-pill shadow-sm" placeholder="admin" required autofocus>
+                    </div>
+                    <div class="mb-5">
+                        <label class="form-label fw-bold text-muted">Password</label>
+                        <input type="password" name="password" class="form-control form-control-lg rounded-pill shadow-sm" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold shadow">Masuk</button>
+                </form>
+
+                <div class="text-center mt-4">
+                    <small class="text-muted">Hubungi pembina jika lupa akses</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

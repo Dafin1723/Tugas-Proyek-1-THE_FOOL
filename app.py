@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 from datetime import datetime
@@ -72,6 +72,40 @@ def pesan():
         return redirect(url_for('pesan'))  # balik ke form setelah submit
 
     return render_template('user/index.html')  # halaman form print
+
+# Halaman Login Admin
+@app.route('/admin/login', methods=['GET', 'POST'])
+def admin_login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        # Hardcode dulu (ganti sesuai keinginan)
+        if username == 'admin' and password == 'unitproduksi123':
+            session['admin_logged_in'] = True
+            session['admin_user'] = username
+            flash('Login berhasil! Selamat datang Admin.', 'success')
+            return redirect(url_for('admin'))
+        else:
+            flash('Username atau password salah.', 'danger')
+
+    return render_template('admin/login.html')
+
+# Logout Admin
+@app.route('/admin/logout')
+def admin_logout():
+    session.pop('admin_logged_in', None)
+    session.pop('admin_user', None)
+    flash('Anda telah logout.', 'info')
+    return redirect(url_for('admin_login'))
+
+# Proteksi semua route admin (admin, update, dll)
+@app.before_request
+def require_admin_login():
+    if request.path.startswith('/admin') and request.path != '/admin/login':
+        if not session.get('admin_logged_in'):
+            flash('Silakan login terlebih dahulu sebagai admin.', 'warning')
+            return redirect(url_for('admin_login'))
 
 # Admin Dashboard
 @app.route('/admin')
