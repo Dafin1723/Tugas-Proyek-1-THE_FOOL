@@ -44,6 +44,7 @@ def produk():
     return render_template('produk.html')
 
 # Halaman Pesan Print (form upload) - pindah ke /pesan biar ga bentrok dengan root
+# Halaman form Pesan Print
 @app.route('/pesan', methods=['GET', 'POST'])
 def pesan():
     if request.method == 'POST':
@@ -68,9 +69,9 @@ def pesan():
         else:
             flash('File tidak valid atau kosong.', 'danger')
 
-        return redirect(url_for('pesan'))
+        return redirect(url_for('pesan'))  # balik ke form setelah submit
 
-    return render_template('user/index.html')  # atau templates/index.html kalau flat
+    return render_template('user/index.html')  # halaman form print
 
 # Admin Dashboard
 @app.route('/admin')
