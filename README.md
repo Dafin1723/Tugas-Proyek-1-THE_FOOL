@@ -105,9 +105,6 @@ Thanks buat semua yang sudah kontribusi di project ini 🙌
 <a href="https://github.com/Dafin1723/Tugas-Proyek-1-THE_FOOL/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Dafin1723/Tugas-Proyek-1-THE_FOOL" />
 </a>
-
-## 👥 Team Contributions
-
 ![Dafin commits](https://img.shields.io/github/commit-activity/m/Dafin1723/Tugas-Proyek-1-THE_FOOL)
 
 
