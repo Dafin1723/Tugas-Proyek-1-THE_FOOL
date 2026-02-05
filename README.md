@@ -99,12 +99,10 @@ Dokumentasi progres selama magang di Gamelab
 ## Team Stats
 
 ## 🏆 Team Contribution Stats
+## Contributors
+Thanks to everyone who contributed:
+https://github.com/Dafin1723/Tugas-Proyek-1-THE_FOOL/graphs/contributors
 
-| Member | Commits | Last Commit |
-|--------|--------|------------|
-| Dafin  | 16     | 30 Jan 2026 |
-| Fikri  | 0      | 31 Jan 2026 |
-| Amru   | 9      | 30 Jan 2026 |
 
 
 ###
