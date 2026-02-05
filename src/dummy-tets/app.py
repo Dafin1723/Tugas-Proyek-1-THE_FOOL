@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-app.secret_key = 'rahasia-super-panjang-ubah-ini-pake-os-urandom-bro'  # WAJIB ganti pake yang random!
+app.secret_key = 'rahasia-super-panjang-ubah-ini-pake-os-urandom-bro'  
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
@@ -13,7 +13,6 @@ app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'png', 'jpg', 'jpeg', 'docx'}
 
 db = SQLAlchemy(app)
 
-# Model Pesanan
 class Pesanan(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nama = db.Column(db.String(100), nullable=False)
@@ -22,10 +21,9 @@ class Pesanan(db.Model):
     ukuran = db.Column(db.String(20))
     jumlah = db.Column(db.Integer)
     file_path = db.Column(db.String(255))
-    status = db.Column(db.String(20), default='pending')  # pending, selesai, batal
+    status = db.Column(db.String(20), default='pending')  
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-# Buat tabel kalau belum ada
 with app.app_context():
     db.create_all()
 
@@ -33,18 +31,14 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
-# Root langsung ke halaman produk (sesuai request client terbaru)
 @app.route('/')
 def home():
     return redirect(url_for('produk'))
 
-# Halaman Produk (yang utama sekarang)
 @app.route('/produk')
 def produk():
     return render_template('produk.html')
 
-# Halaman Pesan Print (form upload) - pindah ke /pesan biar ga bentrok dengan root
-# Halaman form Pesan Print
 @app.route('/pesan', methods=['GET', 'POST'])
 def pesan():
     if request.method == 'POST':
@@ -69,18 +63,16 @@ def pesan():
         else:
             flash('File tidak valid atau kosong.', 'danger')
 
-        return redirect(url_for('pesan'))  # balik ke form setelah submit
+        return redirect(url_for('pesan'))  
 
-    return render_template('user/index.html')  # halaman form print
+    return render_template('user/index.html')  
 
-# Halaman Login Admin
 @app.route('/admin/login', methods=['GET', 'POST'])
 def admin_login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
 
-        # Hardcode dulu (ganti sesuai keinginan)
         if username == 'admin' and password == 'unitproduksi123':
             session['admin_logged_in'] = True
             session['admin_user'] = username
@@ -91,7 +83,6 @@ def admin_login():
 
     return render_template('admin/login.html')
 
-# Logout Admin
 @app.route('/admin/logout')
 def admin_logout():
     session.pop('admin_logged_in', None)
@@ -99,7 +90,6 @@ def admin_logout():
     flash('Anda telah logout.', 'info')
     return redirect(url_for('admin_login'))
 
-# Proteksi semua route admin (admin, update, dll)
 @app.before_request
 def require_admin_login():
     if request.path.startswith('/admin') and request.path != '/admin/login':
@@ -107,13 +97,11 @@ def require_admin_login():
             flash('Silakan login terlebih dahulu sebagai admin.', 'warning')
             return redirect(url_for('admin_login'))
 
-# Admin Dashboard
 @app.route('/admin')
 def admin():
     pesanan_list = Pesanan.query.order_by(Pesanan.created_at.desc()).all()
     return render_template('admin/dashboard.html', pesanan=pesanan_list)
 
-# Update Status Pesanan
 @app.route('/update/<int:id>', methods=['POST'])
 def update(id):
     pesanan = Pesanan.query.get_or_404(id)
@@ -122,12 +110,10 @@ def update(id):
     flash('Status berhasil diupdate!', 'info')
     return redirect(url_for('admin'))
 
-# Download File Pesanan
 @app.route('/download/<filename>')
 def download(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
 if __name__ == '__main__':
-    # Buat folder uploads kalau belum ada
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     app.run(debug=True)
