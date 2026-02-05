@@ -98,9 +98,13 @@ Dokumentasi progres selama magang di Gamelab
 
 ## Team Stats
 
-## 🏆 Team Contribution Stats
-## Contributors
-![Contributors](https://img.shields.io/github/contributors/Dafin1723/Tugas-Proyek-1-THE_FOOL)
+## 👥 Contributors
+
+Thanks buat semua yang sudah kontribusi di project ini 🙌  
+
+<a href="https://github.com/Dafin1723/Tugas-Proyek-1-THE_FOOL/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Dafin1723/Tugas-Proyek-1-THE_FOOL" />
+</a>
 
 
 
