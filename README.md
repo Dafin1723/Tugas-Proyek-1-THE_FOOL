@@ -109,7 +109,7 @@ Thanks buat semua yang sudah kontribusi di project ini 🙌
 
 ![Dafin commits](https://img.shields.io/github/commit-activity/m/Dafin1723/Tugas-Proyek-1-THE_FOOL)
 
-
+![Alt](https://repobeats.axiom.co/api/embed/4de2dfc78d61fed2acdfdf21dadc518214508489.svg "Repobeats analytics image")
 
 ###
 
