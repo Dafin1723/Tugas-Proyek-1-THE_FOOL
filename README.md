@@ -14,7 +14,6 @@
 </picture>
 
 
-<img src="https://raw.githubusercontent.com/Dafin1723/Dafin1723/output/snake.svg" alt="Snake animation" />
 
 ###
 ###
